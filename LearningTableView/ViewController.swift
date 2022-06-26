@@ -19,6 +19,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
     }
     
+    @IBAction func add() {
+        let fruits: [String] = ["メロン", "マンゴー", "もも"]
+        items.append(fruits.randomElement()!)
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
