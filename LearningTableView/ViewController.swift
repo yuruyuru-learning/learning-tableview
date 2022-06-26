@@ -10,6 +10,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
+    
+    var items: [String] = ["りんご", "ぶどう", "さくらんぼ"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,12 +20,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "yuruyuru"
+        cell.textLabel?.text = items[indexPath.row]
         return cell
     }
 
